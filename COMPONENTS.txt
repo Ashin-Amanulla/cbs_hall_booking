@@ -1,0 +1,289 @@
+====================================
+COMPONENT REFERENCE GUIDE
+====================================
+
+LAYOUT COMPONENTS:
+------------------
+
+1. MainLayout
+   - Full app layout with header and mobile navigation
+   - Usage: Wraps main app routes
+   - Props: title, showMenu
+
+2. Header
+   - Sticky top header with theme toggle and notifications
+   - Auto-managed by MainLayout
+
+3. MobileNav
+   - Fixed bottom navigation bar
+   - 5 main tabs: Home, Calendar, Bookings, Wallet, Profile
+   - Active state indicators
+
+UI COMPONENTS:
+--------------
+
+1. Button
+   - Variants: primary, secondary, outline, danger, ghost
+   - Sizes: sm, md, lg
+   - Props: loading, disabled, fullWidth, onClick
+   - Example:
+     <Button variant="primary" size="lg" fullWidth>
+       Click Me
+     </Button>
+
+2. Card / CardHeader / CardContent / CardFooter
+   - Container component with consistent styling
+   - Example:
+     <Card>
+       <CardHeader>Title</CardHeader>
+       <CardContent>Content</CardContent>
+       <CardFooter>Footer</CardFooter>
+     </Card>
+
+3. Input
+   - Text input with label and error handling
+   - Props: label, type, value, onChange, error, required
+   - Example:
+     <Input
+       label="Email"
+       type="email"
+       value={email}
+       onChange={(e) => setEmail(e.target.value)}
+       required
+     />
+
+4. Select
+   - Dropdown select with label
+   - Props: label, options, value, onChange
+   - Example:
+     <Select
+       label="Choose"
+       options={[{value: '1', label: 'Option 1'}]}
+       value={selected}
+       onChange={(e) => setSelected(e.target.value)}
+     />
+
+5. Textarea
+   - Multi-line text input
+   - Props: label, value, onChange, rows
+   - Example:
+     <Textarea
+       label="Description"
+       value={desc}
+       onChange={(e) => setDesc(e.target.value)}
+       rows={4}
+     />
+
+6. LoadingSpinner
+   - Animated loading indicator
+   - Sizes: sm, md, lg
+   - Example:
+     <LoadingSpinner size="md" />
+
+7. LoadingScreen
+   - Full-screen loading state
+   - Example:
+     {isLoading && <LoadingScreen />}
+
+8. ProtectedRoute
+   - Route wrapper with authentication
+   - Props: children, allowedRoles
+   - Example:
+     <ProtectedRoute allowedRoles={['admin']}>
+       <AdminPage />
+     </ProtectedRoute>
+
+PAGES:
+------
+
+1. Login (/login)
+   - Email/password authentication
+   - Role-based routing after login
+   - Demo credentials displayed
+
+2. Home (/)
+   - Dashboard overview
+   - Quick features grid
+   - Popular venues carousel
+   - Quick action buttons
+
+3. Venues (/venues)
+   - Search and filter functionality
+   - Grid of venue cards
+   - Click to view details
+
+4. VenueDetail (/venues/:id)
+   - Full venue information
+   - Image gallery
+   - Amenities list
+   - Booking CTA
+
+5. Calendar (/calendar)
+   - Monthly calendar view
+   - Color-coded availability
+   - Filter by hotel
+   - Upcoming bookings list
+
+6. Bookings (/bookings)
+   - Tabs: Upcoming / Past
+   - Booking cards with details
+   - Quick actions (reschedule, cancel)
+   - Status indicators
+
+7. BookingForm (/book/:id)
+   - 4-step wizard:
+     * Date & Time
+     * Venue Details
+     * Add-ons Selection
+     * Confirmation
+   - Progress indicator
+   - Cost calculation
+
+8. Wallet (/wallet)
+   - Points balance card
+   - Streak indicator
+   - Tabs: Overview / History / Rewards
+   - Transaction list
+   - QR scan button
+
+9. Profile (/profile)
+   - User information
+   - Role-specific links
+   - Settings access
+   - Logout button
+
+10. Notifications (/notifications)
+    - Unread count
+    - Notification cards
+    - Type indicators (booking, wallet, promotion)
+    - Mark as read functionality
+
+11. AdminDashboard (/admin/dashboard)
+    - Revenue stats
+    - Occupancy charts
+    - Popular venues
+    - Quick management actions
+    - Restricted to admins
+
+12. ManagerResources (/manager/resources)
+    - Booking selector
+    - Resource checklist
+    - Status updates
+    - Progress tracking
+    - Restricted to event managers
+
+STORES (Zustand):
+-----------------
+
+1. useAuthStore
+   - user, isAuthenticated, role
+   - login(), logout(), updateUser()
+
+2. useBookingsStore
+   - bookings, selectedBooking
+   - setBookings(), addBooking(), updateBooking()
+
+3. useVenuesStore
+   - venues, selectedVenue, filters
+   - setVenues(), selectVenue(), setFilters()
+
+4. useWalletStore
+   - balance, transactions, rewards, streak
+   - earnPoints(), redeemPoints()
+
+5. useThemeStore
+   - isDark
+   - toggleTheme(), setTheme()
+
+UTILITIES:
+----------
+
+1. helpers.js
+   - formatCurrency(amount)
+   - formatDate(date, format)
+   - formatRelativeTime(date)
+   - getStatusColor(status)
+   - truncateText(text, maxLength)
+   - isValidEmail(email)
+   - calculateBookingTotal(venue, addons)
+   - getInitials(name)
+
+2. constants.js
+   - ROLES
+   - BOOKING_STATUS
+   - AVAILABILITY_STATUS
+   - RESOURCE_STATUS
+   - ADDON_TYPES
+   - VENUE_TYPES
+
+3. mockData.js
+   - mockVenues
+   - mockBookings
+   - mockAddons
+   - mockWalletData
+   - mockUsers
+   - mockNotifications
+   - mockAnalytics
+   - mockResources
+
+API INTEGRATION:
+----------------
+
+All API functions are in src/api/index.js:
+
+- authAPI: login, register, logout, getCurrentUser
+- venuesAPI: getAll, getById, checkAvailability, create, update, delete
+- bookingsAPI: getAll, getById, create, update, cancel, reschedule
+- walletAPI: getBalance, getTransactions, earnPoints, redeemPoints, scanQR
+- analyticsAPI: getOccupancy, getRevenue, getPopularVenues
+- resourcesAPI: getAll, getByBooking, updateStatus
+- notificationsAPI: getAll, markAsRead, markAllAsRead
+
+STYLING GUIDE:
+--------------
+
+Color Palette:
+- Primary: Blue (text-primary-600, bg-primary-50, etc.)
+- Accent: Amber (text-accent-600, bg-accent-50, etc.)
+- Success: Green
+- Danger: Red
+- Warning: Amber
+
+Spacing:
+- Consistent padding: p-4, p-6
+- Gaps: gap-2, gap-4, gap-6
+- Margins: mt-4, mb-6
+
+Border Radius:
+- Cards: rounded-xl
+- Buttons: rounded-xl
+- Inputs: rounded-xl
+- Images: rounded-xl / rounded-t-xl
+
+Responsive Design:
+- Mobile-first approach
+- Grid layouts: grid-cols-2, grid-cols-3
+- Responsive text: text-sm, text-base, text-lg
+- Safe areas for mobile: safe-area-bottom
+
+Dark Mode:
+- All components support dark mode
+- Use dark: prefix for dark mode styles
+- Example: bg-white dark:bg-gray-800
+
+BEST PRACTICES:
+---------------
+
+1. Always use mobile-first design
+2. Consistent spacing with Tailwind classes
+3. Use Card components for grouped content
+4. Implement loading states
+5. Show error messages clearly
+6. Use icons from Lucide React
+7. Keep components focused and reusable
+8. Use Zustand for global state only
+9. Validate forms before submission
+10. Provide user feedback for actions
+
+====================================
+

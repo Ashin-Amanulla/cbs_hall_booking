@@ -1,0 +1,15 @@
+{
+  "appId": "com.intercity.venuebooking",
+  "appName": "Intercity Hotels",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0ea5e9",
+      "showSpinner": false
+    }
+  }
+}
