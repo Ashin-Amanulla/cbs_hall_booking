@@ -11,7 +11,7 @@ export const mockVenues = [
     description:
       "Elegant ballroom with crystal chandeliers and state-of-the-art facilities",
     images: [
-      "https://images.unsplash.com/photo-1519167758481-83f29da8c2b6?w=800",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAuLMqOZJU_VWdVM-lEIAe6KzR0pfH1wE6w&s",
     ],
     amenities: [
       "WiFi",

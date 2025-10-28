@@ -26,7 +26,7 @@ export const Search = () => {
       rating: 4,
       reviews: 200,
       image:
-        "https://images.unsplash.com/photo-1519167758481-83f29c8a0c0b?w=300&h=200&fit=crop&crop=center",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAuLMqOZJU_VWdVM-lEIAe6KzR0pfH1wE6w&s",
     },
     {
       id: 2,

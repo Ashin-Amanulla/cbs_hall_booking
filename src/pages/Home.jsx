@@ -30,7 +30,7 @@ export const Home = () => {
       id: 2,
       name: "Party Center",
       image:
-        "https://images.unsplash.com/photo-1519167758481-83f29c8a0c0b?w=150&h=150&fit=crop&crop=center",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAuLMqOZJU_VWdVM-lEIAe6KzR0pfH1wE6w&s",
     },
     {
       id: 3,
@@ -55,7 +55,7 @@ export const Home = () => {
       rating: 4,
       reviews: 200,
       image:
-        "https://images.unsplash.com/photo-1519167758481-83f29c8a0c0b?w=300&h=200&fit=crop&crop=center",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAuLMqOZJU_VWdVM-lEIAe6KzR0pfH1wE6w&s",
     },
     {
       id: 2,
@@ -70,7 +70,7 @@ export const Home = () => {
   ];
 
   const mostFavourite = [
-    "https://images.unsplash.com/photo-1519167758481-83f29c8a0c0b?w=100&h=100&fit=crop&crop=center",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAuLMqOZJU_VWdVM-lEIAe6KzR0pfH1wE6w&s",
     "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=100&h=100&fit=crop&crop=center",
     "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=100&h=100&fit=crop&crop=center",
     "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=100&h=100&fit=crop&crop=center",
