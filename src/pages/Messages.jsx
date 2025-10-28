@@ -21,7 +21,7 @@ export const Messages = () => {
       lastMessage: "Your event is confirmed",
       time: "Yesterday: 09:11 PM",
       avatar:
-        "https://images.unsplash.com/photo-1519167758481-83f29c8a0c0b?w=50&h=50&fit=crop&crop=center",
+        "https://cloudfront-eu-central-1.images.arcpublishing.com/thenational/2FEYYDOUMWZAJGRJVWYVJPUUD4.jpg",
     },
     {
       id: 3,
